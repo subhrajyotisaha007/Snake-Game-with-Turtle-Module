@@ -19,5 +19,5 @@ class BigFood(Turtle):
         self.goto(x_axis, y_axis)
         self.hideturtle()
     def show_bigfood(self):
-        turtle.ontimer(self.refresh, 5000)
         self.showturtle()
+        turtle.ontimer(self.hideturtle, 5000)
