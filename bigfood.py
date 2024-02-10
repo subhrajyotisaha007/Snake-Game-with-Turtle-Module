@@ -1,6 +1,7 @@
 from turtle import Turtle
 from random import randint
-import turtle
+from turtle import Screen
+
 
 class BigFood(Turtle):
     def __init__(self):
@@ -11,13 +12,17 @@ class BigFood(Turtle):
         self.color('green')
         self.speed('fastest')
         self.hideturtle()
+        self.refresh()
 
-        
     def refresh(self):
         x_axis = randint(-250, 280)
         y_axis = randint(-250, 250)
         self.goto(x_axis, y_axis)
         self.hideturtle()
+
     def show_bigfood(self):
         self.showturtle()
-        turtle.ontimer(self.hideturtle, 5000)
+        
+    def off(self):
+        self.goto(300,300)
+        
