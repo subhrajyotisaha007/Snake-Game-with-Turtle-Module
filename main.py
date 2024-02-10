@@ -5,7 +5,8 @@ from food import Food
 import time
 from score import Score
 from bigfood import BigFood
-import turtle
+
+
 screen = Screen()
 screen.setup(height=600,width=600)
 screen.bgcolor('black')
@@ -28,10 +29,12 @@ while game_on:
     screen.update()
     time.sleep(0.1)
     snake.move()
-
     #big food
     if score.score >=5 and score.score%5 == 0:
         bigfood.show_bigfood()
+        screen.ontimer(bigfood.off,2000)
+        screen.ontimer(bigfood.refresh,8000)
+        screen.update()
         if snake.head.distance(bigfood) < 20:
             bigfood.refresh()
             snake.extend()
